@@ -25,7 +25,7 @@ jobs:
           file: ./kube-news/src/Dockerfile
           push: true
           tags: |
-            edgardosreis12/kubenews: ${{ github.run_number }}
+            edgardosreis12/kubenews:${{ github.run_number }}
             edgardosreis12/kubenews:latest
 
   CD:
