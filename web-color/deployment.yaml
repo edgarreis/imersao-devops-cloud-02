@@ -1,0 +1,40 @@
+
+
+
+# Deployment do Web-Server
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name:  web-page
+
+spec:
+  replicas: 2 # Numero de Pods
+  selector:
+    matchLabels:
+      app: mydeployment
+  template:
+    metadata:
+      labels:
+        app: mydeployment
+    spec:
+      containers:
+        - name: web
+          image: fabricioveronez/web-color:blue
+          ports:
+          - containerPort: 80
+---
+# Service do Web-Server
+apiVersion: v1
+kind: Service
+metadata: 
+  name: web-page
+spec:
+    selector:
+      app: mydeployment
+    ports:
+      - protocol: TCP
+        port: 80
+        name: http
+        nodePort: 30000
+    type: NodePort  # LoadBalance

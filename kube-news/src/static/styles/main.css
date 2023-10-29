@@ -40,6 +40,16 @@ body {
   max-width: 210px;
 }
 
+.header__version {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.94px;
+  text-align: center;
+}
+
 .header__button {
   border-radius: 8px;
   border: 1px solid #1e293b;
